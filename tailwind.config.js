@@ -41,6 +41,7 @@ module.exports = {
         'primary-bg': '#1F1E23',
         'gozatgray-500':'#AFAFB1',
         'gozatgray-200':'#262D37',
+        'gozatblue-400':'#026CDF',
         'card-bg':'#242529',
         'cardupper-bg': '#27292E',
       },

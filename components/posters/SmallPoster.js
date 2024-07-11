@@ -5,7 +5,6 @@ import Typography from '../ui/Typography'
 import { isMobile } from 'react-device-detect'
 
 export default function SmallPoster({ data }) {
-    console.log(data)
     return (
         <div className='w-full flex justify-between items-center gap-3'>
             <figure>
@@ -18,7 +17,7 @@ export default function SmallPoster({ data }) {
                     <Link href={data.url} title={data.title}>{data.title}</Link>
                 </Typography>
                 <Typography variant='subtitle'>{data.venueName}</Typography>
-                <Typography variant='subtitle'>{data.date}</Typography>
+                <Typography variant='subtitle' className={'text-white'}>{data.date}</Typography>
             </div>
         </div>
     )

@@ -189,5 +189,37 @@ export default {
           "isFollow": false,
           "followerCount": 155678
         }
+      ],
+      tagsData:[
+        {
+          "id":1,
+          "name":"Rap & Hiphop",
+          "isFollow": false,
+        },
+        {
+          "id":2,
+          "name":"Pop",
+          "isFollow": false,
+        },
+        {
+          "id":3,
+          "name":"Arabeks",
+          "isFollow": false,
+        },
+        {
+          "id":4,
+          "name":"Rock",
+          "isFollow": false,
+        },
+        {
+          "id":5,
+          "name":"Senfoni",
+          "isFollow": false,
+        },
+        {
+          "id":6,
+          "name":"Festival",
+          "isFollow": false,
+        },
       ]
 }

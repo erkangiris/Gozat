@@ -4,10 +4,10 @@ import Title from '../ui/Title'
 import MostExpectedCard from '../posters/MostExpectedCard'
 import StandartButton from '../ui/StandartButton'
 
-export default function MostExpected({ data, title, description }) {
+export default function MostExpected({ data, title, subtitle }) {
   return (
     <Box>
-      <Title title={title} subtitle={description} />
+      <Title title={title} subtitle={subtitle} />
       <div className='w-full flex flex-col gap-2'>
         {
           data.map((item) => (

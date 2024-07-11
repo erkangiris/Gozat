@@ -8,10 +8,10 @@ import 'swiper/css/pagination';
 import ArtistAvatar from '../artists/ArtistAvatar';
 import StandartButton from '../ui/StandartButton';
 
-export default function ArtistSlider({ data, title, description }) {
+export default function ArtistSlider({ data, title, subtitle }) {
     return (
         <Box>
-            <Title title={title} subtitle={description} />
+            <Title title={title} subtitle={subtitle} />
             <Swiper
                 className='w-full'
                 spaceBetween={8}

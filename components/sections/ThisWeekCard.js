@@ -8,7 +8,7 @@ export default function ThisWeekCard({ data, title, subtitle }) {
     return (
         <Box>
             <Title title={title} subtitle={subtitle} />
-            <div className='w-full flex flex-col gap-2'>
+            <div className='w-full flex flex-col gap-2 lg:grid lg:grid-cols-3 lg:gap-5'>
                 {
                     data.map((item)=>(
                         <SmallPoster data={item} key={item.id} />

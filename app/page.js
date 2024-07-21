@@ -7,10 +7,13 @@ import MainSlider from "@/components/sliders/MainSlider";
 import PosterSlider from "@/components/sliders/PosterSlider";
 import Filter from "@/components/ui/Filter";
 import FakeData from '@/data'
+import { headers } from "next/headers";
+import { isMobile } from '../components/utils/isMobile'
 
 export default function Home() {
 
-
+  const userAgent = headers().get("user-agent") || "";
+  const mobileCheck = isMobile(userAgent);
   const { sliderData, populerData, MostExpectedData, artistData, tagsData } = FakeData;
 
 
@@ -18,7 +21,7 @@ export default function Home() {
   return (
     <>
       <MainSlider data={sliderData} />
-      <Filter />
+      {mobileCheck &&  <Filter />}
       <PosterSlider data={populerData} title='Popüler Etkinlikler' subtitle='Şehrindeki popüler konserler' />
       <MostExpected data={MostExpectedData} title='Yılın En Beklenen Konserleri' subtitle='Bu yıl gerçekleşecek en büyük konserler!' />
       <LocationAccess title='Etrafındaki Konserleri & Mekanları Keşfet' subtitle='Etrafındaki etkinlikler ve mekanları harita üzerinde keşfet!' />

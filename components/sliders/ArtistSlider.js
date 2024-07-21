@@ -20,7 +20,7 @@ export default function ArtistSlider({ data, title, subtitle }) {
             >
                 {
                     data?.map((item) => (
-                        <SwiperSlide key={item.id} className='w-32'>
+                        <SwiperSlide key={item.id} className='w-32 lg:w-40'>
                             <ArtistAvatar data={item} />
                         </SwiperSlide>
                     ))

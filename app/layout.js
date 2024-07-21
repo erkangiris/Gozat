@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`bg-body bg-primary-bg min-h-screen bg-no-repeat text-white bg-cover ${inter.className}`}>
         <Header />
-        <main className="px-2 flex flex-col gap-2">{children}</main>
+        <main className="px-2 flex flex-col gap-2 lg:gap-5 lg:px-10">{children}</main>
         {/* <Footer /> */}
       </body>
     </html>

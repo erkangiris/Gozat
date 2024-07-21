@@ -4,7 +4,9 @@ import Box from './Box'
 import Image from 'next/image'
 import Icons from './Icons'
 
+
 export default function Filter() {
+
   return (
 
     <Box className='flex flex-col'>

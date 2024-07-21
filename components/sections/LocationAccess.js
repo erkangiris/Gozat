@@ -6,10 +6,10 @@ import StandartButton from '../ui/StandartButton'
 
 export default function LocationAccess({title,subtitle}) {
   return (
-    <Box>
+    <Box className="justify-center items-center text-center">
         <Title title={title} subtitle={subtitle} />
         <Image src="/images/static/location_access.svg" alt="Konuma İzin Ver" width={300} height={190} />
-        <StandartButton title='Konuma İzin Ver' />
+        <StandartButton title='Konuma İzin Ver' className="mt-5" />
     </Box>
   )
 }

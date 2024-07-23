@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 import ArtistAvatar from '../artists/ArtistAvatar';
 import StandartButton from '../ui/StandartButton';
 
-export default function ArtistSlider({ data, title, subtitle }) {
+export default function ArtistVenueSlider({ data, title, subtitle }) {
     return (
         <Box>
             <Title title={title} subtitle={subtitle} />

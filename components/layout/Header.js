@@ -5,13 +5,14 @@ import React from 'react'
 import { XMarkIcon, Bars3Icon, MagnifyingGlassIcon } from '@heroicons/react/24/solid'
 import Typography from '../ui/Typography'
 import Icons from '../ui/Icons'
+import LocationSelect from '../sections/LocationSelect'
 
 export default function Header() {
   const menu = [
-    { name: 'Konserler', href: '/konserler' },
-    { name: 'Festivaller', href: '/festivaller' },
-    { name: 'Sanatçılar', href: '/sanatcilar' },
-    { name: 'Mekanlar', href: '/mekanlar' },
+    { name: 'Konserler', href: '/konser' },
+    { name: 'Festivaller', href: '/festival' },
+    { name: 'Sanatçılar', href: '/sanatci' },
+    { name: 'Mekanlar', href: '/mekan' },
     { name: 'İletişim', href: '/iletisim' }
   ]
 
@@ -23,31 +24,27 @@ export default function Header() {
 
   return (
     <>
-      <header className='w-full px-6 flex items-center h-20 lg:px-10'>
-        <nav className='flex items-center  text-lg font-medium text-white w-full justify-between lg:hidden'>
-
+      <header className='w-full px-6 flex items-center h-20 lg:px-0 lg:pt-4 mb-4'>
+        <nav className='flex items-center  text-lg font-medium text-white dark:text-black w-full justify-between lg:hidden'>
           <button onClick={openMenu}>
             <Bars3Icon className='w-6 h-6 text-white' />
           </button>
           <Link href="/" title="Ana Sayfa">
-            <Image src="/images/static/logo_white.svg" width={128} height={29} alt="Gözat Logo" />
+            <Image src="/images/static/logo_white.svg" width={128} height={29} alt="Gözat Logo" className='dark:hidden' />
+            <Image src="/images/static/logo_black.svg" width={128} height={29} alt="Gözat Logo" className='dark:block hidden'  />
           </Link>
           <button>
             <MagnifyingGlassIcon className='w-6 h-6 text-white' />
           </button>
         </nav>
-        <nav className='sm:hidden w-full flex justify-between h-20 items-center'>
-          <div className='flex gap-10 items-center'>
+        <nav className='w-full h-16 flex justify-between items-center bg-card-bg bg-opacity-50 dark:bg-white dark:bg-opacity-100 px-10 max-w-1440 mx-auto rounded-lg'>
+          <div className='flex gap-8 items-center'>
             <Link href="/" title="Ana Sayfa">
-              <Image src="/images/static/logo_white.svg" width={128} height={29} alt="Gözat Logo" />
+            <Image src="/images/static/logo_white.svg" width={128} height={29} alt="Gözat Logo" className='dark:hidden' />
+            <Image src="/images/static/logo_black.svg" width={128} height={29} alt="Gözat Logo" className='dark:block hidden'  />
             </Link>
-            <button className='flex gap-5 items-center'>
-              <Icons icon='/images/static/pin.svg' />
-              <div className='flex flex-col  justify-center items-start'>
-                <Typography variant='xxs'>Şehir</Typography>
-                <Typography variant='textSm' className='font-semibold'>Şehir Seçin</Typography>
-              </div>
-            </button>
+            <LocationSelect />
+
           </div>
           <div className='flex gap-10 h-20 items-center'>
             {menu.map((item) => (
@@ -57,16 +54,13 @@ export default function Header() {
             ))}
           </div>
           <div className='flex gap-2'>
-            {/* <div className='h-11 relative w-80'>
-              <Image src="/images/static/search.svg" width={16} height={16} alt="Arama" className='absolute left-3 top-3' />
-              <input type='text' className='w-full h-11 bg-gozatgray-200 rounded-lg pl-12 pr-5 placeholder:text-sm' placeholder='Etkinlik, Sanatçı ya da Mekan ara...' />
-            </div> */}
-            <button><Icons icon='/images/static/search.svg' /></button>
-            <button><Icons icon='/images/static/user.svg' /></button>
+            <button className='w-8 h-8 flex items-center justify-center'><Image src="/images/static/search.svg" width={20} height={20} /></button>
+            <button className='w-8 h-8 flex items-center justify-center'><Image src="/images/static/user.svg" width={24} height={24} /></button>
           </div>
-        </nav>
-      </header>
 
+        </nav>
+          
+      </header>
       <div className='w-full fixed top-0 -left-full bottom-0 right-0 gap-6 z-10 h-screen bg-primary-bg backdrop-blur-xl bg-opacity-45 p-8 flex flex-col'>
         <button className='w-11 h-11 flex items-center justify-center bg-black bg-opacity-5 rounded-lg absolute right-8 top-8' onClick={openMenu}>
           <XMarkIcon className='w-6 h-6 text-white' />

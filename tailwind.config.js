@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'selector',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -10,8 +11,7 @@ module.exports = {
   theme: {
     screens: {
       'sm': {'max': '1023px'},
-      'lg': {'min': '1024px', 'max': '1921px'},
-      'xl': {'min': '1922px'},
+      'lg': {'min': '1024px'},
     },container: {
       center: true,
     },
@@ -64,7 +64,9 @@ module.exports = {
         'search-shadow': ' 0px 0px 20px rgba(0, 0, 0, 0.05)',
         'btn-shadow': '0px 0px 20px rgba(0, 0, 0, 0.1)',
         'card-shadow': '0px 0px 20px rgba(0, 0, 0, 0.07)',
-        
+      },
+      maxWidth:{
+        '1440': '1440px',
       },
       margin: {
         'line-margin': '60px',

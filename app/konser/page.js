@@ -7,7 +7,7 @@ import MostExpectedCard from '@/components/posters/MostExpectedCard';
 import Title from '@/components/ui/Title';
 
 export default function page() {
-    const { sliderData, populerData, MostExpectedData, artistData, tagsData, festivalData } = FakeData;
+    const {MostExpectedData, festivalData } = FakeData;
 
     return (
         <div className='flex flex-col border-t border-gozatgray-200 pt-6 px-4'>

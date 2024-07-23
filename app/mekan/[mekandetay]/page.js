@@ -4,24 +4,25 @@ import MainSlider from '@/components/sliders/MainSlider';
 import FollowCard from '@/components/ui/FollowCard';
 import Typography from '@/components/ui/Typography';
 import DetailInfo from '@/components/sections/DetailInfo';
+import VenueInfo from '@/components/sections/VenueInfo';
 import TicketPrices from '@/components/sections/TicketPrices';
 import CalendarList from '@/components/sections/CalendarList';
-import ArtistSlider from '@/components/sliders/ArtistSlider';
+import ArtistVenueSlider from '@/components/sliders/ArtistVenueSlider';
 import PosterSlider from '@/components/sliders/PosterSlider';
+import Data from '@/venueDetailData'
 
 export default function page(params) {
-  const { venueSliderData, populerData, MostExpectedData, artistData, tagsData, eventData,venueData, artisData, venueDetailData } = FakeData;
-
+  const { venueDetailData } = Data;
   
 
   return (
     <div className='w-full flex flex-col gap-2'>
-      <MainSlider notext data={venueSliderData} />
-      <FollowCard name="Fişekhane Grandpera" follower="1.590B Takipçi" isFollow image="/images/delete/flogo.webp" />
-      <DetailInfo data={venueDetailData} />
-      <PosterSlider data={populerData} title='Fişekhanedeki Konserler' subtitle='Bu mekandaki popüler konserler' />
-      <FollowCard type="big" name="Fişekhane" follower="155.612 kişi Fişekhane'yi takip ediyor." isFollow image="/images/delete/flogo.webp" />
-      <ArtistSlider data={artistData} title='İlginizi Çekebilecek Diğer Mekanlar' subtitle="Fişekhane'ye benzer mekanlar" />
+      <MainSlider notext data={venueDetailData.media} />
+      <FollowCard name={venueDetailData.venue.name} follower={venueDetailData.venue.followerCount} isFollow={venueDetailData.venue.isFollow} image={venueDetailData.venue.logo} />
+      <VenueInfo data={venueDetailData.venue} />
+      <PosterSlider data={venueDetailData.venueEvents} title={`${venueDetailData.venue.name} Konserleri`} subtitle='Bu mekandaki popüler konserler' />
+      <FollowCard type="big" name={venueDetailData.venue.name} follower={venueDetailData.venue.followerCount} isFollow={venueDetailData.venue.isFollow} image={venueDetailData.venue.logo} />
+      <ArtistVenueSlider data={venueDetailData.relatedVenues} title='İlginizi Çekebilecek Diğer Mekanlar' subtitle={`${venueDetailData.venue.name} benzer mekanlar`} />
     </div>
   )
 }

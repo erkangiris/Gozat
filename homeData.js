@@ -44,6 +44,56 @@ export default {
                 subtitle: `26 Ağustos Cuma, 19:30`,
             },
         ],
+        relatedVenues:[
+          {
+              "id": 1,
+              "image": "/images/delete/vn1.webp",
+              "name": "Fişekhane Grandpera",
+              "url": "/mekan/fisekhane-grandpera",
+              "isFollow": false,
+              "followerCount": 152569
+          },
+          {
+              "id": 2,
+              "image": "/images/delete/vn2.webp",
+              "name": "Kanyon AVM",
+              "url": "/mekan/kanyon-avm",
+              "isFollow": true,
+              "followerCount": 230412
+          },
+          {
+              "id": 3,
+              "image": "/images/delete/vn3.webp",
+              "name": "Zorlu Center",
+              "url": "/mekan/zorlu-center",
+              "isFollow": false,
+              "followerCount": 312759
+          },
+          {
+              "id": 4,
+              "image": "/images/delete/vn4.webp",
+              "name": "Akmerkez",
+              "url": "/mekan/akmerkez",
+              "isFollow": true,
+              "followerCount": 178324
+          },
+          {
+              "id": 5,
+              "image": "/images/delete/vn5.webp",
+              "name": "İstinye Park",
+              "url": "/mekan/istinye-park",
+              "isFollow": false,
+              "followerCount": 289764
+          },
+          {
+              "id": 6,
+              "image": "/images/delete/vn6.webp",
+              "name": "Mall of Istanbul",
+              "url": "/mekan/mall-of-istanbul",
+              "isFollow": true,
+              "followerCount": 354671
+          }
+      ],
         popularEvents: [
             {
                 id: 1,

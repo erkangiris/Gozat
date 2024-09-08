@@ -13,7 +13,6 @@ import DetailInfo from '@/components/sections/DetailInfo';
 export default function page(params) {
   const { eventDetailData } = Data;
 
-
   return (
     <div className='w-full flex flex-col gap-2'>
       <MainSlider notext data={eventDetailData.media} />

@@ -12,7 +12,7 @@ export default function page() {
     return (
         <div className='flex flex-col border-t border-gozatgray-200 pt-6 px-4 lg:gap-10 lg:mx-auto lg:max-w-1440 lg:border-none'>
             <div className='flex justify-between items-center gap-10 mb-6 lg:my-8'>
-                <Typography variant='h1'>Konser Takvimi</Typography>
+                <Typography variant='h1'>Festival Takvimi</Typography>
                 <button>
                     <Icons icon='/images/static/filter.svg' />
                 </button>
@@ -35,17 +35,7 @@ export default function page() {
                 </div>
             </div>
             <div className='mt-12 mb-5'>
-                <Title title="Öne Çıkan Festivaller" subtitle="Bu muhteşem Festivalleri Kaçırma!" />
-                <div className='flex flex-col gap-2 lg:grid lg:grid-cols-4 lg:gap-5'>
-                    {
-                        festivalData.map((item) => (
-                            <MostExpectedCard data={item} bg key={item.id} />
-                        ))
-                    }
-                </div>
-            </div>
-            <div className='mt-12 mb-5'>
-                <Title title="Tüm Konser & Festivaller" subtitle="Sizin için en iyi seçimler!"/>
+                <Title title="Tüm Festivaller" subtitle="Sizin için en iyi seçimler!"/>
                 <div className='flex flex-col gap-2 lg:grid lg:grid-cols-4 lg:gap-5'>
                     {
                         MostExpectedData.map((item) => (

@@ -4,8 +4,13 @@ import Typography from '../ui/Typography'
 import Icons from '../ui/Icons'
 import Link from 'next/link'
 import FollowCard from '../ui/FollowCard'
+import { dateFormat } from '../utils/dateFormat'
 
-export default function Venuenfo({ data }) {
+export default function Venuenfo({ data, artist }) {
+    const bornDate = dateFormat(data.bornDate)
+    const dieDate = dateFormat(data.dieDate)
+    console.log(data.dieDate)
+
 
     return (
         <Box>
@@ -28,29 +33,56 @@ export default function Venuenfo({ data }) {
                     data.type === "venue" &&
                     <FollowCard name={data.venueName} follower={data.followerCount} isFollow image={data.logo} className="mt-5" />
                 }
-                <div className='flex flex-col mt-4 gap-4'>
-                    <div className='flex w-full gap-4 items-center'>
-                        <Icons icon="/images/static/pin.svg" />
-                        <div className='flex flex-col'>
-                            <Typography variant='xxs'>Adres</Typography>
-                            <Typography variant='h5' className="font-medium">{data.venueAddress}</Typography>
+                {
+                    artist ?
+                        <div className='flex flex-col mt-4 gap-4'>
+                            <div className='flex w-full gap-4 items-center'>
+                                <Icons icon="/images/static/pin.svg" />
+                                <div className='flex flex-col'>
+                                    <Typography variant='xxs'>Doğum Yeri</Typography>
+                                    <Typography variant='h5' className="font-medium">{data.bornCity}</Typography>
+                                </div>
+                            </div>
+                            <div className='flex w-full gap-4 items-center'>
+                                <Icons icon="/images/static/phone.svg" />
+                                <Link href={`tel:${data.venuePhone}`} className='flex flex-col'>
+                                    <Typography variant='xxs'>Doğum Tarihi</Typography>
+                                    <Typography variant='h5' className="font-medium">{bornDate.shortDate}</Typography>
+                                </Link>
+                            </div>
+                            <div className='flex w-full gap-4 items-center'>
+                                <Icons icon="/images/static/direction.svg" />
+                                <Link href={`tel:${data.venueDirection}`} className='flex flex-col'>
+                                    <Typography variant='xxs'>Ölüm Tarihi</Typography>
+                                    <Typography variant='h5' className="font-medium">{dieDate.shortDate}</Typography>
+                                </Link>
+                            </div>
                         </div>
-                    </div>
-                    <div className='flex w-full gap-4 items-center'>
-                        <Icons icon="/images/static/phone.svg" />
-                        <Link href={`tel:${data.venuePhone}`} className='flex flex-col'>
-                            <Typography variant='xxs'>Telefon</Typography>
-                            <Typography variant='h5' className="font-medium">{data.venuePhone}</Typography>
-                        </Link>
-                    </div>
-                    <div className='flex w-full gap-4 items-center'>
-                        <Icons icon="/images/static/direction.svg" />
-                        <Link href={`tel:${data.venueDirection}`} className='flex flex-col'>
-                            <Typography variant='xxs'>Yol Tarifi</Typography>
-                            <Typography variant='h5' className="font-medium">Mekana Yol Tarifi Al</Typography>
-                        </Link>
-                    </div>
-                </div>
+                        :
+                        <div className='flex flex-col mt-4 gap-4'>
+                            <div className='flex w-full gap-4 items-center'>
+                                <Icons icon="/images/static/pin.svg" />
+                                <div className='flex flex-col'>
+                                    <Typography variant='xxs'>Adres</Typography>
+                                    <Typography variant='h5' className="font-medium">{data.venueAddress}</Typography>
+                                </div>
+                            </div>
+                            <div className='flex w-full gap-4 items-center'>
+                                <Icons icon="/images/static/phone.svg" />
+                                <Link href={`tel:${data.venuePhone}`} className='flex flex-col'>
+                                    <Typography variant='xxs'>Telefon</Typography>
+                                    <Typography variant='h5' className="font-medium">{data.venuePhone}</Typography>
+                                </Link>
+                            </div>
+                            <div className='flex w-full gap-4 items-center'>
+                                <Icons icon="/images/static/direction.svg" />
+                                <Link href={`tel:${data.venueDirection}`} className='flex flex-col'>
+                                    <Typography variant='xxs'>Yol Tarifi</Typography>
+                                    <Typography variant='h5' className="font-medium">Mekana Yol Tarifi Al</Typography>
+                                </Link>
+                            </div>
+                        </div>
+                }
             </div>
         </Box >
     )

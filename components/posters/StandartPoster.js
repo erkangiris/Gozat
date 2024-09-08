@@ -5,8 +5,6 @@ import { dateFormat } from '../utils/dateFormat'
 export default function StandartPoster({ data }) {
 
     const date = dateFormat(data.date)
-
-    console.log(data)
     
     return (
         <>
